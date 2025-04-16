@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mark Attendance</h1>
+        {% if success %}
+            <p>Attendance marked successfully!</p>
+        {% else %}
+            <p>Click the button below to mark attendance</p>
+            <form action="{{ url_for('attendance') }}" method="post">
+                <button type="submit" class="btn">Mark Attendance</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
